@@ -91,8 +91,8 @@ score['Hong','Math']
 score['Kim', c('Math','Science') ]
 score['Lee',]
 score[ , 'English']
-rownames(score)
-colnames(score)
+rownames(score) # 행 이름
+colnames(score) # 열 이름
 colnames(score)[2]
 
 
