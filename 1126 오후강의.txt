@@ -1,0 +1,110 @@
+VCS = Version control System
+- 중앙 집중식
+Server (서비스 제공자)
+
+
+user1(client), user2(client), user3(client)
+
+모든 처리내용을 서버로 전송 및 자료받아오기
+
+장점 : 서버를 잘 구성하면 됨
+단점 : 서버 마비시 무력화
+
+대표적인 시스템
+SVN
+CVS
+서버 문제시 구제방법없음/ 복구어려움
+
+요즘은 많이 안쓰는 방법
+
+- 분산식 
+각자 (Client)들이 VCS 운영 
+한군대로 연결 및 서로 협업가능 
+
+단점 : 각클라이언트 들이 버전을 운용해야됨
+
+대표시스템
+Git= 각 로컬, Git Hub = 각 협업할때의 서버역할
+
+File - 보조 메모리에 (2차)에 보관하는 단위
+
+VIM-> 리눅스 유닉스에서 사용 (단축키사용)
+
+CLI - Command Line interface
+환경 구성시 - CMD 사용
+
+
+Git으로 버전관리할때 사용
+d: = 드라이브변경
+
+cd \WorkR
+디렉터리변경
+
+dir \w
+은 간략하게 설명해라
+
+git init = 디렉터리 초기화
+git add [File명] = 버전 관리할 대상 추가
+git status = 상태확인
+git commit -m "설명" = 커밋수행
+Ex = git commit -m "first R Script[First.R]"
+
+
+산업혁명 시대
+1차 산업혁명
+증기이용
+
+2차 산업혁명
+전기이용
+
+3차 산업혁명
+인터넷 사용
+
+인터넷 1.0시대 - 검색
+인터넷 2.0시대 - 사용자 참여가능
+인터넷 3.0시대 - 사용자에 의한 컨텐츠 생산
+
+4차 산업혁명
+IOT에 의한 산업혁명은
+기업이나 공장등이 혁명이 일어나야 큰변화
+
+IoT - 사물인터넷 (모든사물에 인터넷을 연결)
+Big data - 숨겨진(이면) 현상 파악
+AI - 머신러닝
+Blockchain - 자기중앙화 시스템, 분산화 시스템
+
+함수의 집합은 라이브러리
+
+컴파일(Compile)방식
+장점 : 실행속도가 빠르다 ,컴파일방식 밑에설명.
+환경구축이 어려움 (Source Code -> Object code -> Excate code -> 결과(Result))
+Source Code : (Editor:Visual Studio Code) , Text file, Ascii Code) 이용 ,Syntax error(문법에러) 
+->
+Object file : 에러시 binary file(2진수, 실행불가)
+->
+Link단계 (연결단계) : Library file / Object file하고 Library file 하고 연결진행 하지만 라이브러리에 없는 소스를 갖다쓰면 에러가남.
+->
+Loader단계 (실행단계) : binary file로 변경 -> 결과 Run-time Error *
+
+Source Code -> Object code -> Excate code -> 결과(Result)
+(Source file)	(object file)	(Excute file)
+	Compiler		Linker		
+
+
+인터프리터(Interpreter)방식
+장점 : 간편하다 결과까지 과정거치는게 별로없음. /실행속도는 느림
+대표적으로 웹브라우저가 있음 / 서버로부터 다운로드 후 실행 / 스크립트 형식
+프로그램하나가 컴파일단계를 모두 수행함.
+대표적인 프로그램 R / 요즘 유행하는 방식 / R은 오픈소스
+
+라이센스
+open source - GNU - 누구든 사용하고 배포할수있는것
+GPL, LGPL = 무조건적으로 소스오픈 , LGPL은 라이브러리만
+APL,MPL,Beerware,BSA = 소스오픈X 라이센스가있어서 기업들이 사용
+BSA = Android에 사용
+
+오픈소스 모델
+성당 모델 - 구글
+시장 모델 - 리눅스 , R , 파이썬, python
+
+R이나 파이썬등 및 언어들은 컴퓨터에게 내 생각을 전달하는 수단일뿐.
