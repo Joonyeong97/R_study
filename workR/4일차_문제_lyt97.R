@@ -35,49 +35,75 @@ colnames(st) # 열 이름 보여주기
 dim(st) # 행 , 열
 
 str(st) # 요 약
+# 8번 문제 행별 합계 / 평균
+apply(st, 1, sum) ; apply(st,1, mean) 
+apply(st,2,sum) ; apply(st, 2, mean) 
 
-apply(st, 1, sum) ; apply(st,1, mean) # 행별 합계 / 평균
-apply(st,2,sum) ; apply(st, 2, mean) # 행별 합계 / 평균
+# 9번 문제
+st1 <- subset( st ["Florida", ] ); st1
 
-st[9,] # 플로리다의 정보 출력 
-st1 <- subset( st ["Florida", ] ); st1 # 검색활용
+# 10번  50개주 Income만 출력
+st2 <-  subset( st ["Income"] ); st2 
 
-st[,2] # 50개주 수입만 출력
-
-st2 <-  subset( st ["Income"] ); st2 # 50개주 Income만 출력
-
+# 11번 Texas주 Area만 출력
 st3 <- subset( st ["Texas",], 
-               select = "Area") ; st3 # Texas주 Area만 출력
+               select = Area) ; st3 
 
-st4 <- subset( st["Ohio",],
-               select = c("Population","Income") ) ; st4 # Ohio주의 인구 와 수입 만 출력
+#12번 문제 Ohio주의 인구 와 수입 만 출력
+st4 <- subset( st['Ohio',],
+               select = c(Population,Income) ) ; st4 
 
+# 13번 문제
+st5 <- subset(st,
+              select = c(Population),
+              subset = c(Population) > 5000) ; st5  
+# 14번 문제
+st6 <- subset(st,
+              select = c(Population,Income,Area) ,
+              subset = c(Income)>= 4500); st6
 
-st5 <- subset(st["Population"]>5000,select = TRUE) # error
-st5
+# 15번 문제
+st7 <- subset(st,
+              subset = c(Income)>= 4500) 
+dim(st7)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 16번 문제
+st8 <- subset(st,
+              subset = c(Area)>=100000 & c(Frost) >= 120); st8 
 
 
+# 17 번 문제
+st9 <- subset(st,
+              subset = c(Population) <2000 | c(Murder) < 12); st9 
 
 
+# 18번 문제
+st10 <- subset(st,
+              select = c(Income)  ,
+               subset = c(Illiteracy) >= 2.0) 
+mean(st10[,1])
 
+# 19번 문제
+st11 <- subset(st,
+              select = c(Income),
+              subset = c(Illiteracy) < 2.0)
+st11_1 <- subset(st,
+                 select = c(Income),
+                 subset = c(Illiteracy) >= 2.0)
 
+apply(st11,2,mean) - apply(st11_1,2,mean)
+
+# 20번 문제
+st12 <- subset(st,
+               select = c(Life.Exp),
+               subset = c(Life.Exp) >= max(Life.Exp) ); st12
+
+# 21번 문제
+st13 <- st[c("Pennsylvania"),c("Income")]
+st13
+
+st13_1 <- subset(st,
+                 subset = c(Income) > st13); st13_1
 
 
 
