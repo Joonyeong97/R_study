@@ -169,9 +169,52 @@ cat("자동차들의 평균 연비는",
 
 # 9번 문제
 
-unique(car[,c('gear')])
+cat("mtcars에 포함된 자동차들의 기어의 종류는",
+    unique(car[,c('gear')]),"입니다.")
 
 
+# 4set
+
+# setwd("D:/test1/lyt09/workR")
+# air <- read.csv("airquality.csv", header = T)
+
+# 1번문제
+setwd("C:/Users/82105/Desktop/빅데이터교육/r/lyt09/workR")
+air <- read.csv("airquality2.csv", header = T)
+
+str(air)
+class(air)
+
+# 2번문제
+head(air)
+
+# 3번문제
+Hightemp <- subset(air,
+                   select = c(Temp,Month,Day) ,
+                   subset = c(Temp) >= max(Temp) )
+Hightemp
+
+# 4번문제
+strWind1 <- subset(air,
+                  select = c(Wind,Month,Day),
+                  subset = (c(Month) == 6) )
+strWind1
+
+strWind1_1 <- max(strWind1[,'Wind'])
+
+strWind <- subset(air,
+                  select = c(Wind,Month,Day),
+                  subset = c(Wind) >=  strWind1_1 & c(Month) == 6  )
+strWind
+
+# 5번문제
+
+meanTemp <- subset(air,
+                   select = c(Temp),
+                   subset = c(Month) == 7)
+cat("7월 평균 기온은",apply(meanTemp, 2, mean),"도 입니다.")
+
+# 6번 문제
 
 
 
