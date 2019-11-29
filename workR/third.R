@@ -153,7 +153,7 @@ iris[1:5,] ;    iris[1:5, c(1,3)]
 # 데이터셋에 미리 적용된 함수들
 
 
-# Matrix와 Data Frame에서 사용하는 함수
+# Matrix와 Data Frame에서 사용하는 함수, 자주쓰는 함수
 person.info
 
 dim(person.info)
@@ -189,7 +189,7 @@ rowMeans(iris[,-5]);          apply(iris[, -5], 1, mean) # 행 마다 계산
 z <- matrix(1:20 , nrow = 4, ncol = 5) ; z
 t(z) # 전치 함수 t
 
-# 조건에 맞는 행과 열의 값 추출(Data Frame만 가능)
+# 조건에 맞는 행과 열의 값 추출(Data Frame만 가능) subset이 find 역할
 IR.1 <- subset(iris, Species == "setosa"); IR.1
 IR.2 <- subset(iris, Sepal.Length > 5.0 & Sepal.Width > 4.0); IR.2
 IR.2[, c(2,4)]
@@ -211,26 +211,60 @@ b/a
 a*b
 
 
+# Matrix/Data Frame 자료구조 확인
+class(iris) ;       str(iris)
+class(state.x77);    str(state.x77 )
+is.matrix(iris)
+is.data.frame(iris)
+is.matrix(state.x77)
+is.data.frame(state.x77 )
+
+head(state.x77)
+dim(state.x77)
+
+st <- data.frame(state.x77)
+str(st)
+head(st)
+class(st)
+dim(st)
+
+iris.m <- as.matrix(iris[, 1:4])
+head(iris.m)
+class(iris.m)
+str(iris.m)
 
 
 
+head(st)
+Population # attach 함수 되기 직전이라 오류남
+attach(st) # st 안에있는 함수이름을 그냥 호출할수 있게함.
+Population
+Income
+
+detach(st) # attach 함수 제거.
+Population
 
 
+# csv file 내용 읽기
+setwd("D:/test1/lyt09/workR")
+air <- read.csv("airquality.csv", header = T)
+
+class(air)
+dim(air)
+str(air)
+head(air)
+tail(air)
 
 
+name <- c("Hong","Kim","Lee")
+age <- c(22,20,25)
+gender <-  factor(c("M","F","M") )
+blood.type <-  factor(c("A","O","B") )
+person.info <- data.frame(name,age,gender,blood.type)
+person.info
 
-
-
-
-
-
-
-
-
-
-
-
-
+setwd("D:/test1/lyt09/workR")
+write.csv(person.info, "person_info.csv", row.names = F)
 
 
 
