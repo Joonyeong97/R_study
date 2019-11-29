@@ -1,0 +1,117 @@
+Program Language
+- 개발환경	- 함수 ) -> 제공되는 Library(사용방법) 
+- 자료형(변수)	- Class ) Library -> 제공되는 Library(사용방법) , 사용자 정의 Library(작성) <- 알고리즘 + 자료구조
+- 연산자 		- 입/출력
+- 제어문
+
+프로그래밍이란 내가 가지고있는 생각을 표현하는것이 프로그래밍이다.
+알고리즘은 어떠한 방법을 순서적으로 이야기한것
+Error가 나는것을 두려워하면 안된다.
+
+R = Interpreter
+R Studio = IDE = 통합개발환경
+
+자료형만 잘정리하면 프로그래밍 50% 가능!
+모든건 메모리를 통함
+알고리즘의 핵심은 메모리를 어떻게 변경할 것 인가?
+
+알고리즘의 원칙 *표시는 중요.
+*유한성 - 모든 알고리즘은 끝날수 있어야 됨
+*0개이상의 입력 - 메모리에 기록
+*1개이상의 출력 - 메모리 내용 출력
+*유효성
+효과성
+
+
+모든 프로그래밍 언어는 자주쓰는 20%의 함수로만 90프로의 프로그램 결과물을 만듦
+
+DATA Type (자료형)
+Computer System에서 사용하는 타입 - 원시자료형은 - 숫자 및 문자
+숫자 나 문자를 구별할때 산술 연산 가능 여부로 판단
+
+스칼라형은 숫자 , 문자로 나눠짐.
+
+논리형 : True , False
+
+Git = version 관리 툴
+Local 영역에 version 관리 = 내 PC에서 관리하겠다. - git tool
+Global 영역에 Version 관리 = 내 PC를 벗어나 다른사람과 공개하고 관리하겠다. - github
+
+
+Git으로 버전관리할때 사용
+d: = 드라이브변경
+
+cd \WorkR
+디렉터리변경
+
+git init = 디렉터리 초기화
+git config --global user.email "ljkk1542@naver.com" //Github의 이메일주소
+git config --global user.name "yeongtaeck97s" //Github의 이름
+git add [File명] = 버전 관리할 대상 추가 [.] 은 모든 파일을 공개하는것
+git status = 파일안에 어떤게 공유안됐는지 확인시켜줌 / 상태확인
+
+git commit -m "설명" = 커밋수행
+Ex = git commit -m "first R Script[First.R]"
+
+git remote add origin https://github.com/yeongtaeck97s/lim.git 
+= git에 자동 업데이트 / local하고 global하고 연결 remote
+origin = local
+
+git push -u origin master  // 업로드
+
+변수 : 값을 저장 및 변경하는 기억장소
+기능 : 값을 쓰는기능 , 값을 읽는 기능
+
+치환연산자(<-) 기준으로 L value(쓰기) / R value(읽기)
+
+변수 값을 저장하는 기억장소
+1. 속성 (기억장소 모양)
+1-1 자료형 (data type)
+1-2 기억장소 크기
+1-3 값 저장 방식
+1-4 값의 범위
+
+2. 연산 (기능,동작) -> 기억장소 이용/변경
+2-1 읽기기능 (L value) *****
+2-2 쓰기기능 (R value) *****
+2-3 산술/관계/논리연산
+
+변수 생성 방법 
+- 정적 자료형으로 생성-> compile형 언어 (C , C++, Java)
+- 동적 자료형으로 생성 -> interpreter (script),(R, python, Java script)
+함수의 의미는 변하지 않음, 문법만 바뀜.
+
+Overflow = 값이넘침
+Underflow = 소수점 연산의 결과가 표현할 값보다 양이 작을때.
+
+Program =
+1. 기억장소 확보
+2. 기억장소 내용을 알고리즘에 따라 읽기/쓰기하여 결과 도축
+
+\n 줄변경
+\t 탭변경
+
+ 	[	산술 (사칙연산) = 결과는 숫자형
+연산자 	[	관계 (대/소비교) = 결과는 논리형
+ 	[	논리 (또는 / 그리고) = 결과는 논리형
+
+
+number1 <- number1 + 10
+누적 (기존 내용을 활용하여 사용할때)
+
+number1 <- number2 + 10
+치환 (새로운 내용으로 활용할때)
+
+제어구조 : Program 실행 흐름 제어
+- 순차 구조 = 명령어 차례대로 나열(명령의 흐름은 위에서 아래로 흐른다)
+- 선택 구조 = 양자택일 구조 ( IF / else )
+- 반복 구조 = for / while
+
+예약어 (Keyword, reserved Word)
+사용자정의 <- User Define Word
+
+1.
+1~1000까지
+3의 배수와 5의 배수를
+한줄에 10개씩 출력하고
+마지막에 개수를 출력
