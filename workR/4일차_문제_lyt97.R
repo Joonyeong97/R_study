@@ -4,7 +4,7 @@
 #
 #
 
-# 문제 1번
+# 1set
 gender <- matrix(c(10,21,40,60,60,70,20,30),4,2) # 매트릭스함수 선언
 
 colnames(gender) <- c("male","female") # 열 이름을 Male / Female 입력
@@ -15,7 +15,8 @@ gender[,"female"] # female 값 출력
 
 gender[3,2] # 3행 2열 출력력
 
-# 문제 2번
+
+# 2set
 
 
 st <- data.frame(state.x77) # Dataframe으로 선언
@@ -106,7 +107,7 @@ st13_1 <- subset(st,
                  subset = c(Income) > st13); st13_1
 
 
-
+# 3set
 
 
 
