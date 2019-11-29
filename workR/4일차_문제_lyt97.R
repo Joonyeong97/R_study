@@ -110,15 +110,66 @@ st13_1 <- subset(st,
 # 3set
 
 
+# 1번 문제
+
+class(mtcars)
+
+# 2번 문제
+
+car <- data.frame(mtcars)
+attach(car)
+
+nrow(car) # 이름들 갯수(행)
+ncol(car) # 이름들 갯수(열)
 
 
+# 3번 문제
+
+str(car)
+
+# 4번 문제
+
+car1 <- subset(car,
+             # select = mpg, (mpg 만 출력하고 싶을때 적음.)
+              subset = mpg >= max(mpg)); car1 
+
+# 5번 문제
 
 
+car2_1 <- subset(car,
+              subset =  gear == 4) ; car2_1
+
+car2_2 <- min(car2_1[,'mpg'])
+car2_2
+
+car2_3 <- subset(car,
+                 subset = ( c(mpg) <= car2_2 & gear == 4 )); car2_3
+
+#car2_4 <- subset(car,
+#                 subset = ( c(mpg) <= min(car[,'mpg']) & gear == 4 )); car2_4
+# min 함수로 하면 값이없다고 뜸.
 
 
+# 6번 문제
+
+car[c("Honda Civic"),c('mpg','gear') ]
 
 
+# 7번 문제
 
+firempg <- car[c("Pontiac Firebird"),c('mpg')]
+firempg
+
+car3 <- subset(car,
+               subset = firempg < c(mpg)); car3
+# 8번 문제
+
+cat("자동차들의 평균 연비는", 
+    mean(car[,1]),"입니다.")
+
+# 9번 문제
+
+unique(car[,c('gear')])
 
 
 
