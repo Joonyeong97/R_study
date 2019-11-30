@@ -13,7 +13,7 @@ gender[2,] # 2행에 있는 값 출력
 
 gender[,"female"] # female 값 출력
 
-gender[3,2] # 3행 2열 출력력
+gender[3,2] # 3행 2열 출력
 
 
 # 2set
@@ -36,6 +36,7 @@ colnames(st) # 열 이름 보여주기
 dim(st) # 행 , 열
 
 str(st) # 요 약
+
 # 8번 문제 행별 합계 / 평균
 apply(st, 1, sum) ; apply(st,1, mean) 
 apply(st,2,sum) ; apply(st, 2, mean) 
