@@ -142,6 +142,8 @@ iris[ , c(1,3,5)]
 iris[ , c("Sepal.Length","Species")]
 iris[1:5,] ;    iris[1:5, c(1,3)]
 
+str(iris)
+
 # data()
 
 # iris
