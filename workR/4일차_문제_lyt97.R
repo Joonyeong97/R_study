@@ -1,6 +1,6 @@
 #
 #
-# 임영택 20191129/20191202
+# 임영택 20191129/20191130
 #
 #
 
@@ -216,20 +216,33 @@ cat("7월 평균 기온은",apply(meanTemp, 2, mean),"도 입니다.")
 
 # 6번 문제
 
+sum(air[1,])
+
+Ozone1 <- subset(air,
+                 select = c(ozone,Month,Day),
+                 subset = c(ozone) > 100); Ozone1
+nrow(Ozone1)
+
+# 5 SET
+
+ds1 <- data.frame(state.x77)
+ds1
+
+top_rich <- subset(ds1,
+                   select = c(Income,Population,Area),
+                   subset = c(Income) >= 5000)
+top_rich
 
 
+setwd("C:/Users/82105/Desktop/빅데이터교육/r/lyt09/workR")
+write.csv(top_rich, "rich_state.csv", row.names = T)
 
 
+ds <- read.csv("rich_state.csv", header = T)
 
+ds
 
-
-
-
-
-
-
-
-
+# 끝
 
 
 
