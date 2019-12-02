@@ -1,0 +1,38 @@
+Java-> JDK (자바 개발환경)
+JRE(자바 실행환경)
+
+SE -> 일반 프로그래밍작성
+EE -> 웹 만들때
+ME -> 모바일 앱 만들때
+
+
+1. JDK 설치
+2. O/S별 환경 설정
+환경변수 path에 JDK설치 위치 등록
+시스템 정보-> 고급시스템 설정 - 시스템변수 에서 편집후
+C:\Program Files\Java\jdk1.8.0_231\bin
+
+그담에 제일 우선순위로설정
+
+
+Data 분석 절차 ->
+문제정의 -> 
+Data수집 -> 
+Data 정제/전처리 -> 
+Data탐색 ->(탐색적 Data분석) 
+Data 분석-> (Data medel 구축)(머신러닝)
+결과 보고서
+
+-현상을 분석
+-이면을 찾는
+
+
+DATA 종류
+1. 특성에 따른 분류
+1.1 범주형(Categorical Data) (ex; 남,녀 / 혈액형등 산술연산이 불가한것) count만 factor
+1.2 연속성(Numerical Data) (성적,키,몸무게,나이등 산술연산이 가능한것)
+
+2. 변수 개수에 의한 분류
+2.1 인변량 (univaridate data) (변수가 한개인것)
+2.2 다변량 (Multivaridate data) (변수가 두개이상)
+이변량 (Bivardate data) (변수가 딱 두개 다)

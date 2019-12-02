@@ -180,8 +180,7 @@ cat("mtcars에 포함된 자동차들의 기어의 종류는",
 # air <- read.csv("airquality.csv", header = T)
 
 # 1번문제
-setwd("C:/Users/82105/Desktop/빅데이터교육/r/lyt09/workR")
-air <- read.csv("airquality2.csv", header = T)
+air <- data.frame(airquality)
 
 str(air)
 class(air)
@@ -220,8 +219,8 @@ cat("7월 평균 기온은",apply(meanTemp, 2, mean),"도 입니다.")
 sum(air[1,])
 
 Ozone1 <- subset(air,
-                 select = c(ozone,Month,Day),
-                 subset = c(ozone) > 100); Ozone1
+                 select = c(Ozone,Month,Day),
+                 subset = c(Ozone) > 100); Ozone1
 nrow(Ozone1)
 
 # 5 SET
@@ -235,12 +234,13 @@ top_rich <- subset(ds1,
 top_rich
 
 
-setwd("C:/Users/82105/Desktop/빅데이터교육/r/lyt09/workR")
-write.csv(top_rich, "rich_state.csv", row.names = T)
+setwd("d:/lyt")
+write.csv(top_rich, "rich_state1.csv", row.names = T)
 
 
-ds <- read.csv("rich_state.csv", header = T)
-
+ds <- read.csv("rich_state1.csv", header = T)
+rownames( ds ) <- ds$X
+ds <- ds[ ,-1 ]
 ds
 
 # 끝
