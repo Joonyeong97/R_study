@@ -148,7 +148,7 @@ range(weight)
 # 최대값과 최소값의 차이
 diff(range (weight))
 
-
+summary(weight)
 
 
 # histogram : 연속형 자료의 분포를 시각화

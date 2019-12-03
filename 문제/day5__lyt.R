@@ -39,6 +39,7 @@ mean(score) # 평균값
 median(score) # 중간값
 sd(score) # 표준편차
 max(score) # MAX값
+names(score[score == max(score)])
 
 boxplot(score, main = '점수표',
         las = 1, xlab = '과목', ylab = '점수')
@@ -97,11 +98,8 @@ table(gear1)
 
 par(mfrow = c(1,1)) # 화면분할
 
-boxplot(mpg~gear,
-        data = mtcars, 
-        main = 'Gear의 그룹정보와 연비',
-        las=1)
 
+# 4 단이좋음
 summary(mtcars$mpg)
 summary(mtcars$mpg[mtcars$gear ==3])
 summary(mtcars$mpg[mtcars$gear ==4])
