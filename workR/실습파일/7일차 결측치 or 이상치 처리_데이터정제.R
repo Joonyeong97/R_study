@@ -205,8 +205,299 @@ for (i in 1:ncol(com)) {
   cat(com[,i], "\n")
 }
 
+# 데이터 집계
+agg <- aggregate( iris[, -5] ,
+                  by = list(iris$Species),
+                  FUN = mean ) #데이터 집계 함수
+agg
 
 
+agg1 <- aggregate( iris[, -5] ,
+                  by = list(iris$Species),
+                  FUN = sd ) #데이터 집계 함수
+agg1
+
+
+
+head(mtcars)
+
+agg3 <- aggregate( mtcars ,
+                  by = list(cyl = mtcars$cyl,
+                  vs = mtcars$vs),
+                  FUN = max ) #데이터 집계 함수
+agg3
+
+
+
+# 데이터 병합
+x <- data.frame(name = c('a','b','c'),
+                mat = c(90,80,40))
+y <- data.frame(name = c('a','b','d'),
+                korean = c(75,60,90))
+
+z <- merge(x,y,by =c('name'))
+
+z
+ 
+
+
+merge(x,y)
+merge(x,y, all.x = T)
+merge(x,y, all.y = T)
+merge(x,y, all = T)
+
+
+x <- data.frame(name = c('a','b','c'),
+                mat = c(90,80,40))
+y <- data.frame(sname = c('a','b','d'),
+                korean = c(75,60,90))
+
+merge( x, y, by.x = c("name"),
+              by.y = c("sname") )
+
+#
+# dplyr package
+#
+# pipe(파이프) 연산자 %>% / ctrl + shift + m
+
+# install.packages("dplyr")
+
+library(dplyr)
+
+df <- data.frame(var1 = c(1,2,1) ,
+                 var2 = c(2,3,1))
+
+df
+
+
+# rename() : 이름 변경
+
+df <- rename(df, v1 = var1 , v2 = var2)
+df
+
+# 파생 변수 추가 pipe 함수 사용불가
+
+df$sum <- df$v1 + df$v2
+df
+
+df[2,1] <- 5
+df
+
+
+
+# filter() : 행 추출 필터후 또 필터후 또 필터가 가능함!
+
+df1 <- data.frame( id = c(1,2,3,4,5,6),
+                  class = c(1,1,1,1,2,2),
+                  math = c(50,60,45,30,25,50),
+                  english = c(98,97,86,98,80,89),
+                  science = c(50,60,78,58,65,98) )
+
+df1
+
+
+df1 %>%  filter(class == 1)
+df1 %>%  filter(class == 2)
+df1 %>%  filter(class != 1)
+df1 %>%  filter(class != 2)
+
+
+df1 %>%  filter(science > 70)
+df1 %>%  filter(math < 50)
+
+
+df1 %>%  filter(class == 1 & math >= 50)
+df1 %>%  filter(math >= 50 | english >= 90)
+df1 %>%  filter(class %in% c(1,3,5))
+
+class1 <- df1 %>% filter (class == 1)
+class2 <- df1 %>% filter (class == 2)
+
+class1
+class2
+
+
+# select() : 변수(열) 추출
+df1 %>% select( math )
+df1 %>% select( science )
+
+df1 %>% select(class,math, science)
+df1 %>% select(-math)
+
+
+
+
+# dplyr 함수 조합
+
+df1 %>% filter(class == 1) %>% 
+  select(science)
+
+
+df1 %>% 
+  select(id, science) %>% 
+  head
+
+df1 %>% 
+  select(id, science) %>% 
+  sum
+
+df1 %>% 
+  select(id, science) %>% 
+  max
+
+
+
+# arrange() : 정렬 , desc() 이거적으면 내림차순
+df1 %>%  arrange(science)
+df1 %>%  arrange(desc(science))
+
+
+
+
+# mutate() : 파생변수 추가 / 변수이름은 설정가능
+df1 %>% 
+  mutate(total = math + english + science) %>% 
+  head
+
+df1 %>% 
+  mutate(total = math + english + science,
+         average = (math + english + science) /3 ) %>% 
+  head
+
+df1 %>% 
+  mutate(grade = ifelse(science >= 60, 'pass', 'fail')) %>% 
+  head
+
+
+df1 %>% 
+  mutate(total = math + english + science,
+         average = (math + english + science) /3 ) %>% 
+  mutate( grade = ifelse(average >= 90, 'pass',
+                         ifelse(average <60, 'fail',
+                                'normal'))) %>% 
+  head
+
+
+
+df1 %>% 
+  mutate(total = math + english + science,
+         average = (math + english + science) /3 ) %>% 
+  arrange(desc(average)) %>% 
+  head
+
+
+
+df.sort <- df1 %>% 
+  mutate(total = math + english + science,
+         average = (math + english + science) /3 ) %>% 
+  arrange(desc(average)) %>% 
+  head
+
+df.sort
+
+
+# summarise() : 집단별 요약
+# group_by() : 집단별 나누기
+df1 %>% summarise(mean_math = mean (math))
+
+df1 %>% 
+  group_by(class) %>% 
+  summarise( mean_math = mean(math),
+             mean_english = mean(english),
+             mean_science = mean(science),
+             n = n() ) # n = n() 빈도수를 계산해주는 함수
+
+# install.packages("ggplot2")
+library(ggplot2)
+
+str(ggplot2::mpg)
+mpg <- data.frame(ggplot2::mpg)
+dim(mpg)
+str(mpg)
+head(mpg)
+View(mpg)
+
+
+
+
+
+mpg %>% 
+  group_by(manufacturer, drv) %>% 
+  summarise(mean_cty = mean(cty)) %>% 
+  head(10)
+
+
+
+
+mpg %>% 
+  group_by( manufacturer) %>% 
+  filter(class == 'suv') %>% 
+  mutate(tot = (cty + hwy) / 2) %>% 
+  summarise(mean_tot = mean (tot)) %>% 
+  arrange(desc(mean_tot)) %>% 
+  head(5)
+
+
+
+# 데이터 합치기
+# left_join() : 가로로 합치기(변수추가) / 처음들어간 인수 기준으로 동일한 함수만 
+# inner_join() : 가로로 합치기(변수추가)
+# full_join() : 가로로 합치기(변수추가)
+# bind_rows() : 세로로 합치기( Data 추가)
+
+df2 <- data.frame(id= c(1,2,3,4,5),
+                  midterm = c(60,80,70,90,85))
+df3 <- data.frame(id= c(1,2,3,4,5),
+                  final = c(60,80,70,90,85))
+total <- left_join(df2,df3,by='id')
+total
+
+df2 <- data.frame(id = c(1,2,3),
+                  address = c('서울', '부산', '제주'),
+                  stringsAsFactors = F)
+df3 <- data.frame(id = c(1,2,4),
+                  gender = c('남', '여', '남'))
+
+df_left <- left_join(df2,df3, by = 'id')
+df_left
+df_inner <- inner_join(df2,df3, by = 'id')
+df_inner
+df_full <- full_join(df2,df3,by='id')
+df_full
+
+
+df2 <- data.frame(id= c(1,2,3,4,5),
+                  midterm = c(60,80,70,90,85))
+df3 <- data.frame(id= c(1,2,3,4,5),
+                  final = c(60,80,70,90,85))
+
+df_all <- bind_rows(df2,df3)
+df_all
+
+
+# summary() 함수보다 더 자세하게 알려줌
+install.packages("psych")
+library(psych)
+
+
+summary(mtcars)
+describe(mtcars) # summary() 함수보다 더 자세하게 아려줌
+
+
+
+# freq() 함수 table 함수 대신
+install.packages("descr")
+require(descr)
+
+
+df <- data.frame(id = c(1,2,4),
+                  gender = c('남', '여', '남'))
+
+
+table(df$gender)
+
+freq(df$gender)
+freq(df$gender, plot = F )
 
 
 
