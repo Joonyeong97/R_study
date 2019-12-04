@@ -36,10 +36,12 @@ colnames(gg) <- c('수입','교육기간')
 
 
 
-cor(gg) # 상관 관계 파악
-plot(gg, main = '교육기간과 수입의 상관관계', las = 1,
-     pch = 19 , col = 'red')
 
+plot(sq~tc, data = gg, main = '교육기간과 수입의 상관관계', las = 1,
+     pch = 19 , col = 'red')
+res <- lm(sq~tc, data = gg)
+abline(res)
+cor(gg) # 상관 관계 파악
 #  교육기간이 늘어날수록 수입이 증가
 
 
