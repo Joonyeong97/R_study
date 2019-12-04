@@ -242,9 +242,9 @@ z
 
 
 merge(x,y)
-merge(x,y, all.x = T)
-merge(x,y, all.y = T)
-merge(x,y, all = T)
+merge(x,y, all.x = T) # x의 행들은 다 나오게해라
+merge(x,y, all.y = T) # y의 행들은 다 나오게해라
+merge(x,y, all = T) # x,y 둘다 나오게해라
 
 
 x <- data.frame(name = c('a','b','c'),
@@ -441,8 +441,8 @@ mpg %>%
 
 # 데이터 합치기
 # left_join() : 가로로 합치기(변수추가) / 처음들어간 인수 기준으로 동일한 함수만 
-# inner_join() : 가로로 합치기(변수추가)
-# full_join() : 가로로 합치기(변수추가)
+# inner_join() : 가로로 합치기(변수추가) / 두개의 비교 데이터가 동일시 해야함
+# full_join() : 가로로 합치기(변수추가) / 두개다 그냥 합침
 # bind_rows() : 세로로 합치기( Data 추가)
 
 df2 <- data.frame(id= c(1,2,3,4,5),

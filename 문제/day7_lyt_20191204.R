@@ -23,7 +23,7 @@ col_na <- function(y){
 }
 na_count <- apply(ds,2,col_na) 
 na_count
-#열별로 NA값 개수파악악
+#열별로 NA값 개수파악
 
 
 rowSums(is.na(ds))                 # 결측치가 포함된 행
@@ -97,36 +97,68 @@ st %>% arrange(Illiteracy) %>%
 
 car <- data.frame(mtcars)
 
+# 1
 mt.gear <- split(car, car$gear)
 
+
+# 2
 subset(car, gear == 4)
 
-## 집가서
 
-mt.gear.35 <- subset(car, gear == 3 & gear == 5)
+# 3
+mt.gear.35 <- car %>% filter(gear == 3 | gear == 5)
+
 mt.gear.35
 
 
+# 4
+
+car %>% filter(wt >=1.5 & wt <= 3.0)
 
 
 
 
+# 문제 6번
+
+authors <- data.frame( surname = c( "Twein", "Venables", "Tierney", "Ripley", "McNeil" ),
+                       nationality = c( "US", "Australia", "US", "UK", "Australia" ),
+                       retired = c( "yes", rep( "no", 4 ) ) )
+books <- data.frame( name = c( "Johns", "Venables", "Tierney", "Ripley", "Ripley", "McNeil" ),
+                     title = c( "Exploratory Data Analysis", 
+                                "Modern Applied Statistics ...",
+                                "LISP-STAT",
+                                "Spatial Statistics", "Stochastic Simulation",
+                                "Interactive Data Analysis" ),
+                     other.author = c( NA, "Ripley", NA, NA, NA, NA ) )
 
 
 
 
+# 1
 
+z <- merge(authors,books,by.x =c("surname"),
+                          by.y = c("name"))
 
+# 2
 
+z1 <- merge(authors,books,by.x =c("surname"),
+                by.y = c("name"),
+            all.x = T)
+z1
 
+# 3
 
+z2 <- merge(authors,books,by.x =c("surname"),
+            by.y = c("name"),
+            all.y = T)
+z2
 
+# 4
 
-
-
-
-
-
+z3 <- merge(authors,books,by.x =c("surname"),
+            by.y = c("other.author"),
+            all = T)
+z3
 
 
 
