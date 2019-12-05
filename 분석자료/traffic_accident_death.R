@@ -9,6 +9,8 @@
 
 setwd("D:/lyt/lyt09/분석자료")
 accident <- read.csv('2015_2018_traffic_accident_death1.csv', header = T)
+xxa <- read.csv('20190910.csv', header = T)
+
 
 class(accident)
 dim(accident)

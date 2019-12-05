@@ -49,7 +49,7 @@ for (i in 1:ncol(x)) {
       '\t', sum(this.na),
       '\n')
 }
-
+ncol
 
 # apply() 이용
 col_na <- function(y){

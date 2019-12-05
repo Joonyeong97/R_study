@@ -40,6 +40,14 @@ st <- data.frame(state.x77)
 
 summary(st$Income)
 boxplot(st$Income)
+boxplot( st[, 1 ] )     # 특이값 있음
+boxplot( st[, 2 ] )     # 특이값 있음
+boxplot( st[, 3 ] )     # 특이값 없음
+boxplot( st[, 4 ] )     # 특이값 없음
+boxplot( st[, 5 ] )     # 특이값 없음
+boxplot( st[, 6 ] )     # 특이값 없음
+boxplot( st[, 7 ] )     # 특이값 없음
+boxplot( st[, 8 ] )     # 특이값 있음
 boxplot.stats(st$Income)$out
 
 
@@ -71,8 +79,8 @@ sum(is.na(AQ))                     # 결측치의 개수
 AQ1 <- AQ[ complete.cases(AQ),]   # 결측치가 포함되지 않은 것들만 출력
 
 
-AQ_1 <- abs(AQ1 %>% summarise(mean_Ozone = mean(Ozone)))
-AQ_2 <- abs(AQ1 %>% summarise(mean_Solar.R = mean(Solar.R)))
+AQ_1 <- AQ1 %>% summarise(mean_Ozone = mean(Ozone))
+AQ_2 <- AQ1 %>% summarise(mean_Solar.R = mean(Solar.R))
 
 
 AQ$Ozone[AQ$Ozone %in% NA] <- AQ_1
@@ -85,7 +93,7 @@ AQ2
 # 문제 4번
 
 st <- data.frame(state.x77)
-
+require( dplyr )
 st %>% arrange(Population) # 오름차
 st %>% arrange(desc(Income)) # 내림차
 
