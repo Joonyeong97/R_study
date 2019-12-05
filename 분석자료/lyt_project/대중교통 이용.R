@@ -53,13 +53,14 @@ barplot(test15_21, main = "일별 버스이용량 분석", las = 1,
 barplot(test22_30, main = "일별 버스이용량 분석", las = 1,
         col = 2:8 , names.arg = c('일','월','화','수','목','금','토','일','월'), xlab = '9월 22일 ~ 9월 30일', border = 'black')
 
+
 # , names.arg = c('일','월','화','수','목','금','토')
 
 jejusort <- sort(jejutest)
 
 barplot(jejusort, main = "일별 버스이용량 분석", las = 1,
         col = 2:6)
-legend('topleft', legend = row.names(jejutest), fill = 2:6, cex = 0.65)
+legend('topleft', legend = row.names(test), fill = 2:8, cex = 0.65)
 
 
 
