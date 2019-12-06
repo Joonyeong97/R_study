@@ -41,6 +41,10 @@ test8_14 <- jejutest[c(8:14)]
 test15_21 <- jejutest[c(15:21)]
 test22_30 <- jejutest[c(22:30)]
 
+jeju_mmdd1 <- jeju_mmdd %>% filter('2019-09-01')
+
+table(jeju_mmdd)
+
 par(mfrow = c(2,2))
 
 barplot(test1_7, main = "9월 1일 ~ 9월 7일 승차인원", las = 1,
@@ -164,6 +168,9 @@ legend('topright', legend = row.names(asq2), fill = 2:6, cex = 0.65)
 
 
 
+
+cor(mtcars      )
+pairs(mtcars    )
 
 
 

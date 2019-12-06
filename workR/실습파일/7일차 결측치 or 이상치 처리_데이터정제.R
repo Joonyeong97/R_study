@@ -208,13 +208,13 @@ for (i in 1:ncol(com)) {
 # 데이터 집계
 agg <- aggregate( iris[, -5] ,
                   by = list(iris$Species),
-                  FUN = mean ) #데이터 집계 함수
+                  FUN = mean ) #데이터 집계 함수 # 열들의 평균
 agg
 
 
 agg1 <- aggregate( iris[, -5] ,
                   by = list(iris$Species),
-                  FUN = sd ) #데이터 집계 함수
+                  FUN = sd ) #데이터 집계 함수 # 열들의 표준편차
 agg1
 
 
@@ -224,7 +224,7 @@ head(mtcars)
 agg3 <- aggregate( mtcars ,
                   by = list(cyl = mtcars$cyl,
                   vs = mtcars$vs),
-                  FUN = max ) #데이터 집계 함수
+                  FUN = max ) #데이터 집계 함 수 # 
 agg3
 
 
@@ -250,7 +250,9 @@ merge(x,y, all = T) # x,y 둘다 나오게해라
 x <- data.frame(name = c('a','b','c'),
                 mat = c(90,80,40))
 y <- data.frame(sname = c('a','b','d'),
-                korean = c(75,60,90))
+                korean = c(75
+                           
+                           ,60,90))
 
 merge( x, y, by.x = c("name"),
               by.y = c("sname") )
