@@ -82,12 +82,12 @@ ggplot(pp1, aes(x = year, y = popul)) +
 #각각의 타일에는 주의 이름을 표시하시오. 마지막으로 이 트리맵에서 관찰할 수 있
 #는 것이 무엇인지 설명하시오
 us <- data.frame(state.x77, state.division)
-st <- data.frame(st, stname = rownames(st))
-qs <- data.frame(state.division, stname = rownames(us))
+us <- data.frame(us, stname = rownames(us))
+
 
 
 library(treemap)
-treemap(st,
+treemap(us,
         index = c("state.division","stname"),
         vSize = "Population",
         vColor = "Income",
@@ -101,8 +101,8 @@ treemap(st,
 #또한, 타일의 면적은 HS.Grad(고등학교 졸업률), 타일의 색은 Murder(범죄률)로 나타
 #내고, 각각의 타일에는 주의 이름을 표시하시오. 마지막으로 이 트리맵에서 관찰할
 #수 있는 것이 무엇인지 설명하시오.
-treemap(st,
-        index = c("stname"),
+treemap(us,
+        index = c("state.division","stname"),
         vSize = "HS.Grad",
         vColor = "Murder",
         type = "value",

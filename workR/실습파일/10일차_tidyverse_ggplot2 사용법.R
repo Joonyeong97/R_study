@@ -58,6 +58,36 @@ ggplot(iris, aes(x = Sepal.Width , fill = Species,
     theme(legend.position = "top") # 범례를 top 에 작성해라
 
 
+ggplot(iris, aes(x = Sepal.Width , fill = Species,
+                 color= Species)) + # fill : 막대를 채우는 색, Species = 3가지 범주형
+  geom_histogram(binwidth = 0.5, position = "identity") + # position = 품종별로 각각 그래프를 그림
+  theme(legend.position = "top") # 범례를 top 에 작성해라
+
+ggplot(iris, aes(x = Sepal.Width , fill = Species,
+                 color= Species)) + # fill : 막대를 채우는 색, Species = 3가지 범주형
+  geom_histogram(binwidth = 0.5, position = "fill") + # position = 품종별로 각각 그래프를 그림
+  theme(legend.position = "top") # 범례를 top 에 작성해라
+
+ggplot(iris, aes(x = Sepal.Width , fill = Species,
+                 color= Species)) + # fill : 막대를 채우는 색, Species = 3가지 범주형
+  geom_histogram(binwidth = 0.5, position = "jitter") + # position = 품종별로 각각 그래프를 그림
+  theme(legend.position = "top") # 범례를 top 에 작성해라
+
+
+
+ggplot(iris, aes(x = Sepal.Width , fill = Species,
+                 color= Species)) + # fill : 막대를 채우는 색, Species = 3가지 범주형
+  geom_histogram(binwidth = 0.5, position = "nudge") + # position = 품종별로 각각 그래프를 그림
+  theme(legend.position = "top") # 범례를 top 에 작성해라
+
+
+ggplot(iris, aes(x = Sepal.Width , fill = Species,
+                 color= Species)) + # fill : 막대를 채우는 색, Species = 3가지 범주형
+  geom_histogram(binwidth = 0.5, position = "stack") + # position = 품종별로 각각 그래프를 그림
+  theme(legend.position = "top") # 범례를 top 에 작성해라
+
+
+
 # ggplot2 Scatter chart (산점도)
 ggplot(data = iris, mapping = aes (x = Petal.Length, 
                                    y = Petal.Width)) +
@@ -178,6 +208,7 @@ library(treemap)
 
 
 data(GNI2014)
+
 dim(GNI2014)
 str(GNI2014)
 head(GNI2014)
