@@ -60,6 +60,10 @@ ggplot(data = mtcars, aes(y = mpg, group = cyl,
                           fill = cyl)) +
 geom_boxplot()
 
+ggplot( data = mtcars, aes( y = mpg, fill = factor( mtcars$cyl ) ) ) +
+  geom_boxplot() +
+  guides( fill = guide_legend( title = "실린더수" ) )
+
 # 문제7번)
 # 다음은 2015년부터 2026년도까지의 예상 인구수 추계 자료이다. 연도를
 # x축으로 하여 ggplot으로 선그래프를 작성하시오.
