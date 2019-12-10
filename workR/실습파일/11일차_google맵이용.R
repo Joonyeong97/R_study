@@ -118,7 +118,7 @@ cen <- as.numeric(gc)
 cen
 
 # 지도 표시
-map <- get_googlemap(center = c(126.569879,33.452409))
+map <- get_googlemap(center = gc)
 ggmap(map)
 
 

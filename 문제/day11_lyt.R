@@ -109,39 +109,39 @@ ggmap(map)
 
 gc1 <- geocode(enc2utf8("금강산"))
 cen1 <- as.numeric(gc1)
-map <- get_googlemap(center = cen1 ,       # 지도 중심점 좌표
+map1 <- get_googlemap(center = cen1 ,       # 지도 중심점 좌표
                      zoom = 8,           # 지도 확대 정도
                      size = c(500,500),   # 지도 크기
                      maptype = "hybrid") # 지도 유형
-ggmap(map)
+ggmap(map1)
 
 # 3번
 
 gc2 <- geocode(enc2utf8("강남역"))
 cen2 <- as.numeric(gc2)
-map <- get_googlemap(center = cen2 ,       # 지도 중심점 좌표
-                     zoom = 16,           # 지도 확대 정도
+map2 <- get_googlemap(center = cen2 ,       # 지도 중심점 좌표
+                     zoom = 13,           # 지도 확대 정도
                      size = c(640,640),   # 지도 크기
                      maptype = "roadmap") # 지도 유형
-ggmap(map)
+ggmap(map2)
 
 # 4번
 
 
-map <- get_googlemap(center = c(127.397692,36.337058) ,       # 지도 중심점 좌표
+map3 <- get_googlemap(center = c(127.397692,36.337058) ,       # 지도 중심점 좌표
                      zoom = 9,           # 지도 확대 정도
                      size = c(640,640),   # 지도 크기
                      maptype = "roadmap") # 지도 유형
-ggmap(map)
+ggmap(map3)
 
 
 # 5번
 
-map <- get_googlemap(center = c(135.502330,34.693594) ,       # 지도 중심점 좌표
+map4 <- get_googlemap(center = c(135.502330,34.693594) ,       # 지도 중심점 좌표
                      zoom = 10,           # 지도 확대 정도
                      size = c(640,640),   # 지도 크기
                      maptype = "roadmap") # 지도 유형
-ggmap(map)
+ggmap(map4)
 
 
 
@@ -161,14 +161,14 @@ gc2 <- data.frame(name = names1 ,gc1)
 
 cen <- c(mean(gc1$lon), mean(gc1$lat))
 
-map <- get_googlemap(center = cen ,       # 지도 중심점 좌표
+map5 <- get_googlemap(center = cen ,       # 지도 중심점 좌표
                      zoom = 11,           # 지도 확대 정도
                      size = c(640,640),   # 지도 크기
                      maptype = "roadmap", # 지도 유형
                      markers = gc1)       # 마커
-ggmap(map)
+ggmap(map5)
 
-gmap <- ggmap(map)
+gmap <- ggmap(map5)
 gmap +
   geom_text(data = gc2,
             aes(
@@ -241,12 +241,9 @@ gmap2 +
 # ‘2018년도 시군구별 월별 교통사고 자료’로부터 서울시의 각 구별 1년 교
 # 통사고 발생건수를 지도상에 원의 크기로 나타내시오.
 
-
+setwd("C:/Users/82105/Desktop/빅데이터교육/r/lyt09/문제")
 setwd("D:/lyt09/문제")
 pil <- read.csv("Report.csv")
-
-
-str(pil)
 
 
 str(pil)
@@ -261,7 +258,7 @@ zz11 <- geocode(enc2utf8(xxx))
 cennam1 <-data.frame(zz11,pil)
 
 
-cen <- c(mean(cennam$lon), mean(cennam$lat))
+cen <- c(mean(cennam1$lon), mean(cennam1$lat))
 
 
 map <- get_googlemap(center = cen,
