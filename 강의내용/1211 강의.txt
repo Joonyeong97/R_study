@@ -1,0 +1,37 @@
+Data Mining : 의사결정을 위해서 DB로 부터 규칙과 패턴을 발견하는 기법 -> 정형화 Data
+
+Text Mining : Text Data로 부터 규칙과 패턴을 발견하는 기법
+자료 처리 과정과 자료분석 과정 -> 비정형 Data
+
+자료분석 과정은 단어 빈도수를 체크!
+
+
+
+DNS Wep Server
+
+
+
+		web server(응답) 	------------->      wep client (요청)
+				(Get/Post) 방식
+				Request
+				<------------
+				Response(Html) 웹브라우저가 해석
+		ip Address 			
+		(network 식별)
+		mac address
+		(H/W 식별)
+
+
+
+통신 -> Protocol (규약 , 약속)
+
+Get 방식은 Http Header에 DATA를 담음 - 전송할수있는 사이즈가 정해져있음, 보안성이 없음.
+Post 방식은 HTTP Body Data를 담은 - 보안성이 Get방식보다 높음
+
+<HTML> Tag
+<Head>
+</Head>
+<Body>
+<H1> - <H2>
+</Body>
+</HTML>

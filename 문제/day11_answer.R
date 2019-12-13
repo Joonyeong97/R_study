@@ -180,6 +180,7 @@ gmap +
 #시하되 국립공원의 이름을 함께 표시하시오.
 
 park.name <- c( '북한산', '설악산', '치악산', '오대산','태백산' )
+str(park.name)
 gc <- geocode( enc2utf8( park.name ) )
 gc
 cen <- colMeans( as.matrix( gc ) ) 
