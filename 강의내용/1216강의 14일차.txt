@@ -1,0 +1,32 @@
+문제정의
+자료수집
+자료전처리
+탐색전 Data 분석 
+-> DATA Model ( 예측, 분류, 군집화 )
+-> 분석보고서
+
+Modeling = Model을 만들어 내는 과정
+현실세계를 표현하는 수식(Data model)을 도출하는 과정
+
+
+y = Wx + b
+반응변수 
+x = (Label)독립변수(특성)
+w,b = 계수,매개변수
+
+Model  과정
+1. Model 선택. 수식결정  y=wx+b
+w = weight (기울기
+
+
+2. 실제 Data를 이용하여 w.b값을 결정 (훈련한다)
+3. 실제 Data를 통한 예측
+4. Model 평가
+
+y=wx+b = 회귀식 (Regression expression)
+회귀식은 연속형 Data로
+
+단순 선형 회귀 분석
+다중 선형 회귀 분석
+
+

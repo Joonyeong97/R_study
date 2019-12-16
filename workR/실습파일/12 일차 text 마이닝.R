@@ -94,7 +94,7 @@ noun2 <- noun2[nchar(noun2) > 1] # 길이가 1글자 이하인것들 제외
 noun2 <- gsub('하지', '', noun2) # 특정 단어를 공백으로 변경
 noun2 <- gsub('때문', '', noun2) # 특정 단어를 공백으로 변경
 noun2 <- gsub('들이', '', noun2)
-wordcount <- table(noun2)
+wordcount <- table(noun2)                      
 sort(wordcount)
 
 
