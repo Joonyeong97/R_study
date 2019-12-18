@@ -1,0 +1,11 @@
+y = B0 + B1X1 + B2X2 + B3X3 + ...
+선형 회귀분석
+1. 모델 결정
+2. 계수 결정(회귀식)
+3. 예측 -> (x,y) 훈련데이타
+4. 실제값으로 예측
+
+Linear Regression = 연속형 Data에 대한 예측
+Logistic Regresstion = 범주형 Data에 대한 예측 -> 결과값을 범주형태로 변환
+즉 one - hot encoding
+sigmoid 함수 = 직선모양인 회귀선을 S모양으로변경

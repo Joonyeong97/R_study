@@ -1,0 +1,42 @@
+Regression - Linear Regression - 연속형 Data에 대한 회귀 분석
+Analisis - Logistic Regression -  범주형 Data에 대한 회귀 분석
+
+Data Model -> 
+지도학습 (Supervised Learning)
+학습 Data에 답이 포함 ( 독립변수 ( feature ) )
+		    ( 종속변수 (Label) )
+-> 예측 , 분류
+
+Linear Regression = 예측할때 씀
+Logistic Regression  = 분류할때 씀
+KNN = 분류
+SVN = 분류 및 예측
+
+
+
+비지도학습 -(Vnsupervised Learning)
+		학습 Data에 답이 미포함 (독립변수)
+-> 군집화 = Data를 유사한것끼리 묶는것 ( Group, category)
+주어진 Data들의 그룹 정보가 없음.
+
+K-means = 평균모델
+
+Nearal Network (신경망) ->확장후 Deep Learning
+
+
+훈련 Data -> 훈련 -> Model
+
+Test Data -> Model
+
+Model -> 적용(overffiting)
+
+K- fold cross ( 훈련 여러번 )
+
+딥러닝
+CNN
+RNN
+
+
+
+
+

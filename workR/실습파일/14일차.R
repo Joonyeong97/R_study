@@ -196,6 +196,7 @@ summary(women_model)
 
 
 
+a <- c(5,6,7,8,9,10)
 
 
 
