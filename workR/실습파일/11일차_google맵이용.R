@@ -4,8 +4,9 @@
 # mosic plot 
 #     다중변수 범주형 데이터에 대한 각 변수의 그룹별 비율을 면적으로 표시
 str(mtcars)
-head(mtcars)
-mosaicplot(~gear + vs,    # 대상 변수 ~다음이 X축 + 다음이 Y축
+  head(mtcars)
+
+  mosaicplot(~gear + vs,    # 대상 변수 ~다음이 X축 + 다음이 Y축
            data = mtcars, # 데이터셋
            color = T,     # y축 변수의 그룹별 음영 다르게 표시
            main = "Gear and Vs") # 제목
@@ -14,7 +15,7 @@ mosaicplot(~gear + vs,    # 대상 변수 ~다음이 X축 + 다음이 Y축
 # Table 함수로 묶어서 내든 그냥하든 똑같음.
 # 범주형끼리만 가능한 함수
 
-
+dim(mtcars)
 
 mosaicplot(~gear + vs, data = mtcars,
            color = c('green','blue'),
@@ -56,6 +57,8 @@ tsne <- Rtsne(ds,               # 차원 축소 대상 데이터 셋
 tsne <- Rtsne(ds, dim = 2, perplexity = 10 )
 
 
+rep(cars)
+seq(cars)
 
 # 차원축소 결과 시각화
 # 2차원으로 표시

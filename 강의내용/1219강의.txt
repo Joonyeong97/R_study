@@ -1,0 +1,16 @@
+Neural network
+CNN - 영상 / 이미지
+RNN - 자연어처리
+DNN - 영상
+CAN - 이미지 합성
+
+Linear Regression
+Logistic Rogression
+K - Means
+KNN
+Decisition Tree
+
+Data Model
+지도학습 (학습시킬때 X,Y 두개를 줌)
+비지도학습 (학습시킬때 X 한개만줌)
+강화 학습
