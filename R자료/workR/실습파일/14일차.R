@@ -74,7 +74,8 @@ abline(model)
 #   b값             W값(기울기값)
 #   y = 3.932       x = 17.579
 #
-
+.0
+00
 
 coef(model) # 매개변수 (계수) - w, b값 출력
 cars

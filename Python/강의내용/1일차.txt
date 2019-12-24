@@ -1,0 +1,4 @@
+list : 매개변수가 길고짧든 데이터 보관
+
+python : 범용언어
+list , diot, set, taple
